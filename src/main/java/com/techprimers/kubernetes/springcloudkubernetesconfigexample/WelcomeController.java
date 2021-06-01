@@ -13,8 +13,9 @@ public class WelcomeController {
     private String message;
 
     @GetMapping("/")
-    public String welcome() {
-        System.out.println(message);
-        return message;
-    }
+	public String welcome() {
+		String prefix = System.getenv().getOrDefault("USERNAME", "Unknown");
+		System.out.println(message);
+		return "Hi " + prefix;
+	}
 }
