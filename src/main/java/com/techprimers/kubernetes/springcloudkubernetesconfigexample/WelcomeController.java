@@ -12,7 +12,7 @@ public class WelcomeController {
     @Value("${message:Welcome to Configmap}")
     private String message;
 
-    @GetMapping
+    @GetMapping("/")
     public String welcome() {
         System.out.println(message);
         return message;
